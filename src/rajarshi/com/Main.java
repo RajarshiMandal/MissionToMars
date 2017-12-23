@@ -16,7 +16,8 @@ public class Main {
 
         // Create a for loop to get the values
         for (Item item : itemArrayList) {
-            System.out.println("Rocket can carry: " + rocket.getMaxLimit() +
+            System.out.println("This is " + item.getName() +
+                    "\nRocket can carry: " + rocket.getMaxLimit() +
                     "(including it's own weight of " + rocket.getRocketWeight() + ")" +
                     "\nGiven cargo weight: " + item.getWeight() +
                     "\nTotal Rocket Weight: " + rocket.carry(item) +
