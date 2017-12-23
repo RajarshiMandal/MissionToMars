@@ -2,7 +2,7 @@ package rajarshi.com;
 
 /**
  * SpaceShip Interface that includes the definitions of the required methods
- * to build a Rocket.
+ * to build anything that is, well, a spaceship.
  */
 public interface SpaceShip {
     /**
