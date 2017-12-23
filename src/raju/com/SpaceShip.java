@@ -1,8 +1,11 @@
 package raju.com;
 
+/**
+ * SpaceShip Interface that includes the definitions of the required methods
+ */
 public interface SpaceShip {
     /**
-     * @return true or false indicating if the launch was successful or if the rocket has crashed
+     * @return true or false indicating if the launch was successful or not
      */
     boolean launch();
 
@@ -12,12 +15,16 @@ public interface SpaceShip {
     boolean land();
 
     /**
+     * A method that takes an Item object and updates the current weight.
+     * @param weight is the weight of the object.
+     * @return an integer value of the current weight of the rocket.
+     */
+    int carry(Item weight);
+
+    /**
      * Takes an Item as an argument and
      *
-     * @return true if the rocket can carry such item or false if it will exceed the weight limit
+     * @return true if the rocket can carry such item or false if it will exceed the weight limit.
      */
     boolean canCarry(Item items);
-
-
-    int carry(Item weight);
 }

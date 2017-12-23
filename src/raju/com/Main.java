@@ -4,13 +4,14 @@ public class Main {
 
     public static void main(String[] args) {
         // write your code here
-        Item item = new Item("tools", 110);
-        Rocket rocket = new Rocket(50, 150);
+        Item item = new Item("tools", 101);
+        Rocket rocket = new Rocket(50, 100);
 
-        System.out.println("Max weight it can carry:\t" + rocket.mCargoLimit +
-                "\nCargo weight:\t" + item.getWeight() +
-                "\nTotal weight:\t" + rocket.carry(item) +
-                "\nCan it carry:\t" + rocket.canCarry(item));
+        System.out.println("Rocket can carry: " + rocket.getMaxLimit() +
+                "(including it's own weight of " + rocket.getRocketWeight() + ")" +
+                "\nGiven cargo weight: " + item.getWeight() +
+                "\nTotal Rocket Weight: " + rocket.carry(item) +
+                "\nCan it carry? " + rocket.canCarry(item));
 
     }
 }

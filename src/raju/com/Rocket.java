@@ -2,13 +2,13 @@ package raju.com;
 
 public class Rocket implements SpaceShip {
 
-    int mRocketWeight; // Weight of the rocket
-    int mCargoLimit; // Maximum weight it can carry
-    int mCurrentCargoWeight;
+    private int mRocketWeight; // Weight of the rocket
+    private int mMaxLimit; // Maximum weight it can carry
+    private int mCurrentRocketWeight;
 
-    public Rocket(int rocketWeight, int maxWeight) {
+    Rocket(int rocketWeight, int maxLimit) {
         mRocketWeight = rocketWeight;
-        mCargoLimit = maxWeight;
+        mMaxLimit = maxLimit + rocketWeight;
     }
 
     @Override
@@ -24,13 +24,24 @@ public class Rocket implements SpaceShip {
     @Override
     public boolean canCarry(Item item) {
         // @return true if total weight is less than max weight it can carry or false.
-        return mCurrentCargoWeight <= mCargoLimit;
+        return mCurrentRocketWeight <= mMaxLimit;
     }
 
     @Override
     public int carry(Item weight) {
         // Calculate the total weight of the Rocket including the weight of the items it carry.
-        return mCurrentCargoWeight = mRocketWeight + weight.getWeight();
+        return mCurrentRocketWeight = mRocketWeight + weight.getWeight();
     }
 
+    int getRocketWeight() {
+        return mRocketWeight;
+    }
+
+    int getMaxLimit() {
+        return mMaxLimit;
+    }
+
+    public int getCurrentRocketWeight() {
+        return mCurrentRocketWeight;
+    }
 }
