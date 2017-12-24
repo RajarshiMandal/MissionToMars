@@ -19,7 +19,7 @@ public interface SpaceShip {
      * A method that takes an Item object and updates the current weight.
      * @param weight is the weight of the object.
      * @return an integer value of the current weight of the rocket including
-     * it's own weight.
+     * the weight of the given item.
      */
     int carry(Item weight);
 

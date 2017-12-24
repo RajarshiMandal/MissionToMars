@@ -1,14 +1,14 @@
 package rajarshi.com;
 
 /**
- * Item class that includes a String name and an int weight that will
+ * Item class that includes a Name and Weight that will
  * represent an item to be carried by the rockets.
  */
 
 public class Item {
 
     private String mName; // Stores the name of the items
-    private int mWeight; // Stores the wieght of the items
+    private int mWeight; // Stores the weight of the items
 
     /**
      * The Constructor
@@ -22,23 +22,14 @@ public class Item {
 
     /**
      * All the getter and setter methods to
-     *
-     * @return that perticular variable of the Object Item.
+     * @return that particular variable of the Object Item.
      */
 
     public String getName() {
         return mName;
     }
 
-    public void setName(String mName) {
-        this.mName = mName;
-    }
-
     public int getWeight() {
         return mWeight;
-    }
-
-    public void setWeight(int mWeight) {
-        this.mWeight = mWeight;
     }
 }
