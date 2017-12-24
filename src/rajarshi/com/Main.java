@@ -1,18 +1,19 @@
 package rajarshi.com;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
         // Test if everything is going as planned.
         // Create a ArrayList of Item
-        ArrayList<Item> itemArrayList = new ArrayList<>();
-        itemArrayList.add(new Item("test 1", 8001));
+        List<Item> itemArrayList = new ArrayList<>();
+        itemArrayList.add(new Item("test 1", 18001));
         itemArrayList.add(new Item("test 2", 7999));
 
         // Create a rocket object
-        Rocket rocketU1 = new Rocket(10000, 18000);
+        U$1 rocketU1 = new U$1(10000, 18000);
 
         // Create a for loop to get the values
         for (Item item : itemArrayList) {

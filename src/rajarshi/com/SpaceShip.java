@@ -1,8 +1,8 @@
 package rajarshi.com;
 
 /**
- * SpaceShip Interface that includes the definitions of the required methods
- * to build anything that is, well, a spaceship.
+ * SpaceShip Interface that includes the definitions of the required methods to build anything that is, well,
+ * a spaceship.
  */
 public interface SpaceShip {
     /**
@@ -17,16 +17,16 @@ public interface SpaceShip {
 
     /**
      * A method that takes an Item object and updates the current weight.
+     *
      * @param weight is the weight of the object.
-     * @return an integer value of the current weight of the rocket including
-     * the weight of the given item.
+     * @return an integer value of the current weight of the rocket including the weight of the given item.
      */
     int carry(Item weight);
 
     /**
      * Takes an Item as an argument and
-     * @return true if the rocket can carry such item or false if it will exceed
-     * the weight limit.
+     *
+     * @return true if the rocket can carry such item or false if it will exceed the weight limit.
      */
     boolean canCarry(Item items);
 }
