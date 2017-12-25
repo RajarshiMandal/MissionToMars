@@ -1,5 +1,6 @@
 package rajarshi.com;
 
+import java.text.DecimalFormat;
 import java.util.Random;
 
 /**
@@ -16,24 +17,29 @@ public class U$2 extends Rocket {
 
     U$2(int rocketWeight, int cargoLimit) {
         super(rocketWeight, cargoLimit);
-        mRandomDouble = setRandomDouble();
+        mRandomDouble = getRandomDouble();
     }
 
     @Override
     public boolean launch() {
         //TODO: correct me.
-        double probability = 0.04 * getCurrentRocketWeight() / getCargoLimit();
-        return mRandomDouble <= probability;
+        double explosionProbability = 0.04 * getResult();
+        return mRandomDouble >= explosionProbability;
     }
 
     @Override
     public boolean land() {
         //TODO: correct me.
-        double probability = 0.08 * getCurrentRocketWeight() / getCargoLimit();
-        return mRandomDouble <= probability;
+        double crashProbability = 0.08 * getResult();
+        return mRandomDouble >= crashProbability;
     }
 
-    private double setRandomDouble() {
-        return new Random().nextDouble();
+    private double getRandomDouble() {
+        DecimalFormat df = new DecimalFormat("#.##");
+        return Double.parseDouble(df.format(new Random().nextDouble() + 0.01));
+    }
+
+    private double getResult() {
+        return getCurrentRocketWeight() / getCargoLimit();
     }
 }
