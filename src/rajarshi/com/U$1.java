@@ -1,5 +1,6 @@
 package rajarshi.com;
 
+import java.text.DecimalFormat;
 import java.util.Random;
 
 /**
@@ -20,31 +21,45 @@ public class U$1 extends Rocket {
      */
     U$1(int rocketWeight, int maxWeight) {
         super(rocketWeight, maxWeight);
-        mRandomDouble = setRandomDouble();
+        mRandomDouble = getRandomDouble();
     }
 
     /**
-     * @return a boolean value to see if the probability calculation is working or not by overriding the methods of
+     * For methods {@link #launch()} and {@link #land()}:
+     * 
+     * @return a boolean value of exploding based on a random number using the probability equation for each.
      * {@link Rocket#launch()} and {@link Rocket#land()}
      */
     @Override
     public boolean launch() {
-        //TODO: correct me if I'm wrong setting the equation of probability.
-        double probability = 0.05 * getCurrentRocketWeight() / getCargoLimit();
+        //TODO: correct me if I'm wrong getting the logic correct.
+        double probability = 0.05 * getResult();
         return mRandomDouble >= probability;
     }
 
     @Override
     public boolean land() {
-        //TODO: correct me if I'm wrong.
-        double probability = 0.01 * getCurrentRocketWeight() / getCargoLimit();
-        return mRandomDouble <= probability;
+        //TODO: correct me if wrong.
+        double probability = 0.01 * getResult();
+        return mRandomDouble >= probability;
     }
 
-    /*
-     * Generate a random double.
+    /**
+     * Generate a random double and get the value.
      */
-    private double setRandomDouble() {
-        return new Random().nextDouble();
+    private double getRandomDouble() {
+        // Format the decimal value to return 2 decimal values
+        DecimalFormat df = new DecimalFormat("#.##");
+        // Fail Safe method: add 0.01 so that random number doesn't return 0.
+        return Double.parseDouble(df.format(new Random().nextDouble() + 0.01));
+    }
+
+    /**
+     * Same calculations every time! A method that can be save typing.
+     *
+     * @return the result of {@link Rocket#getCurrentRocketWeight()} divided by {@link Rocket#getCargoLimit()}
+     */
+    private double getResult() {
+        return getCurrentRocketWeight() / getCargoLimit();
     }
 }
