@@ -22,11 +22,11 @@ public class Item {
     /*
      * All the getter methods to return that particular variable of the Object Item.
      */
-    public String getName() {
+    String getName() {
         return mName;
     }
 
-    public int getWeight() {
+    int getWeight() {
         return mWeight;
     }
 }
