@@ -21,30 +21,6 @@ public class Main {
                 System.out.println(rocketU1.carry(item) + " " + rocketU1.canCarry(item));
             }
         }
-
-        System.out.println();
-        ArrayList<Integer> integers = new ArrayList<>();
-        integers.add(1);
-        integers.add(2);
-        integers.add(5);
-        integers.add(4);
-        System.out.println(integers);
-
-        int sum = 0;
-        int limit = 7;
-        for (Integer i : integers) {
-            System.out.println("value: " + i);
-            int index = integers.indexOf(i);
-
-            if (sum + i <= limit) {
-                sum += i;
-                integers.set(index, 0);
-            }
-            System.out.println("sum: " + sum);
-        }
-        System.out.println();
-        System.out.println(integers);
-
     }
 }
 
