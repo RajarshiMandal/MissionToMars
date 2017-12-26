@@ -8,25 +8,43 @@ public class Main {
     public static void main(String[] args) {
         // Test if everything is going as planned.
         // Create a ArrayList of Item
-        List<Item> itemArrayList = new ArrayList<>();
-        itemArrayList.add(new Item("test 1", 18001));
-        itemArrayList.add(new Item("test 2", 7999));
+        List<Item> arrayList = new ArrayList<>();
+        arrayList.add(new Item("tools", 4000));
+        arrayList.add(new Item("tools", 5000));
+        arrayList.add(new Item("tools", 4000));
 
         // Create a rocket object
         U$1 rocketU1 = new U$1(10000, 18000);
 
-        // Create a for loop to get the values
-        for (Item item : itemArrayList) {
-            System.out.println("This is " + item.getName() +
-                    "\nRocket can carry: " + rocketU1.getCargoLimit() +
-                    " (excluding it's own weight of " + rocketU1.getRocketWeight() + ")" +
-                    "\nGiven cargo weight: " + item.getWeight() +
-                    "\nTotal Rocket Weight: " + rocketU1.carry(item) +
-                    "\nCan it carry? " + rocketU1.canCarry(item) +
-                    "\nLaunch chance: " + rocketU1.launch() +
-                    "\nLand chance: " + rocketU1.land());
-            System.out.println();
+        for (Item item : arrayList) {
+            if (rocketU1.canCarry(item)) {
+                System.out.println(rocketU1.carry(item) + " " + rocketU1.canCarry(item));
+            }
         }
+
+        System.out.println();
+        ArrayList<Integer> integers = new ArrayList<>();
+        integers.add(1);
+        integers.add(2);
+        integers.add(5);
+        integers.add(4);
+        System.out.println(integers);
+
+        int sum = 0;
+        int limit = 7;
+        for (Integer i : integers) {
+            System.out.println("value: " + i);
+            int index = integers.indexOf(i);
+
+            if (sum + i <= limit) {
+                sum += i;
+                integers.set(index, 0);
+            }
+            System.out.println("sum: " + sum);
+        }
+        System.out.println();
+        System.out.println(integers);
 
     }
 }
+
