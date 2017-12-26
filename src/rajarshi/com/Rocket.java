@@ -7,8 +7,8 @@ public class Rocket implements SpaceShip {
 
     private int mMaxWeight; // Maximum weight it can carry.
     private int mRocketWeight; // Weight of the rocket.
-    private int mCargoLimit; // Is the max weight it can carry.
-    private int mCurrentRocketWeight; // Current weight of the rocket including Item weight.
+    private int mCargoLimit; // The max weight it can carry.
+    private int mCurrentCargoWeight; // Current weight of the Item weight.
 
     /**
      * The constructor of the Rocket Object that takes in 2 parameters.
@@ -33,20 +33,21 @@ public class Rocket implements SpaceShip {
     }
 
     /**
-     * @return {@link #mCurrentRocketWeight} for easy access.
+     * Calculate the total weight of the items it's carrying and update the member variable accordingly.
+     *
+     * @return {@link #mCurrentCargoWeight} for easy access.
      */
     @Override
     public int carry(Item item) {
-        // Calculate the total weight of the Rocket including the weight of the items it's carrying.
-        return mCurrentRocketWeight = item.getWeight() + mRocketWeight;
+        return mCurrentCargoWeight += item.getWeight();
     }
 
     /**
-     * @return true if the {@link #mCurrentRocketWeight} doesn't exceeds rocket's total weight.
+     * @return true if {@link #mCurrentCargoWeight} doesn't exceeds rocket's {@link #mCargoLimit} else false.
      */
     @Override
     public boolean canCarry(Item item) {
-        return mCurrentRocketWeight <= mMaxWeight;
+        return mCurrentCargoWeight + item.getWeight() <= mCargoLimit;
     }
 
     /*
@@ -64,7 +65,7 @@ public class Rocket implements SpaceShip {
         return mCargoLimit;
     }
 
-    int getCurrentRocketWeight() {
-        return mCurrentRocketWeight;
+    int getCurrentCargoWeight() {
+        return mCurrentCargoWeight;
     }
 }
