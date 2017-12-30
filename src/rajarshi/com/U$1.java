@@ -53,6 +53,7 @@ public class U$1 extends Rocket {
      * Generate a random double and get the value.
      */
     private double getRandomDouble() {
+        // Reduce the multiplier to fail any one rocket to land or launch, but who wants to loose habitats!
         return (new Random().nextDouble() * 100);
     }
 }

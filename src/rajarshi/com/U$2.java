@@ -22,19 +22,19 @@ public class U$2 extends Rocket {
 
     @Override
     public boolean launch() {
-        //TODO: correct me.
-        return getRandomDouble() >= (0.04 * getResult());
+        //TODO: wrong || right ? correction needed : never mind
+        return getRandomDouble() >= (4.0 * getResult());
     }
 
     @Override
     public boolean land() {
         //TODO: correct me.
-        return getRandomDouble() >= (0.08 * getResult());
+        return getRandomDouble() >= (4.0 * getResult());
     }
 
     private double getRandomDouble() {
-        DecimalFormat df = new DecimalFormat("#.###");
-        return Double.parseDouble(df.format(new Random().nextDouble()));
+        DecimalFormat df = new DecimalFormat("#.####");
+        return Double.parseDouble(df.format(new Random().nextDouble() * 100));
     }
 
     private double getResult() {
