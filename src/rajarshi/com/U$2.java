@@ -29,7 +29,7 @@ public class U$2 extends Rocket {
     @Override
     public boolean land() {
         //TODO: correct me.
-        return getRandomDouble() >= (4.0 * getResult());
+        return getRandomDouble() >= (8.0 * getResult());
     }
 
     private double getRandomDouble() {
