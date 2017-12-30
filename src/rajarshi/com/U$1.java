@@ -51,7 +51,7 @@ public class U$1 extends Rocket {
         // Format the decimal value to return 2 decimal values
         DecimalFormat df = new DecimalFormat("#.##");
         // Fail Safe method: add 0.01 so that random number doesn't return 0.
-        return Double.parseDouble(df.format(new Random().nextDouble() + 0.01));
+        return Double.parseDouble(df.format(new Random().nextDouble()));
     }
 
     /**
