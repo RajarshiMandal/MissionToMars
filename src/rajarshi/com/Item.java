@@ -29,4 +29,8 @@ public class Item {
     public int getWeight() {
         return mWeight;
     }
+
+    public int setWeight(int weight) {
+        return mWeight = weight;
+    }
 }

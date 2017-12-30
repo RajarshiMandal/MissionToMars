@@ -16,7 +16,7 @@ public interface SpaceShip {
     boolean land();
 
     /**
-     * A method that takes an Item object and updates the current weight.
+     * A method that takes Item objects and updates the current weight loaded into the Rocket.
      *
      * @param weight is the weight of the object.
      * @return an integer value of the current weight of the rocket including the weight of the given item.

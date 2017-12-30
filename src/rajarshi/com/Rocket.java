@@ -5,20 +5,24 @@ package rajarshi.com;
  */
 public class Rocket implements SpaceShip {
 
-    private int mMaxWeight; // Maximum weight it can carry.
+    private int mMaxWeight; // Maximum weight of the Rocket.
     private int mRocketWeight; // Weight of the rocket.
-    private int mCargoLimit; // Is the max weight it can carry.
-    private int mCurrentRocketWeight; // Current weight of the rocket including Item weight.
+    private int mCost;
+    private int mCargoLimit; // The max weight it can carry.
+    private int mCurrentCargoWeight = 0; // Current weight of the Items.
 
     /**
-     * The constructor of the Rocket Object that takes in 2 parameters.
+     * The constructor of the Rocket Object.
      *
      * @param rocketWeight is the weight of the rocket itself
-     * @param maxWeight    is the weight of a rocket can carry including it's own weight.
+     * @param maxWeight    is the weight of the rocket it can carry including it's own weight.
+     * @param cost         $ needed to build the Rocket.
      */
-    Rocket(int rocketWeight, int maxWeight) {
+    Rocket(int rocketWeight, int maxWeight, int cost) {
         mRocketWeight = rocketWeight;
         mMaxWeight = maxWeight;
+        mCost = cost;
+        // Calculate the cargo limit.
         mCargoLimit = maxWeight - rocketWeight;
     }
 
@@ -33,38 +37,49 @@ public class Rocket implements SpaceShip {
     }
 
     /**
-     * @return {@link #mCurrentRocketWeight} for easy access.
+     * Calculate the total weight of the {@link Item}s it's carrying and update the member variable accordingly.
+     *
+     * @return {@link #mCurrentCargoWeight} for easy access.
      */
     @Override
     public int carry(Item item) {
-        // Calculate the total weight of the Rocket including the weight of the items it's carrying.
-        return mCurrentRocketWeight = item.getWeight() + mRocketWeight;
+        return mCurrentCargoWeight += item.getWeight();
     }
 
     /**
-     * @return true if the {@link #mCurrentRocketWeight} doesn't exceeds rocket's total weight.
+     * Can the rocket carry the items weight?
+     *
+     * @return true if {@link #mCurrentCargoWeight} doesn't exceeds rocket's {@link #mCargoLimit} or else false.
      */
     @Override
     public boolean canCarry(Item item) {
-        return mCurrentRocketWeight <= mMaxWeight;
+        return (mCurrentCargoWeight + item.getWeight()) <= mCargoLimit;
     }
 
     /*
-     * Public methods to get the value of the member variables
+     * Public methods to get/set the values of the member variables from other classes.
      */
-    int getRocketWeight() {
-        return mRocketWeight;
+    int getCargoLimit() {
+        return mCargoLimit;
+    }
+
+    int getCurrentCargoWeight() {
+        return mCurrentCargoWeight;
+    }
+
+    public void setCurrentCargoWeight(int currentCargoWeight) {
+        mCurrentCargoWeight = currentCargoWeight;
+    }
+
+    public int getCost() {
+        return mCost;
     }
 
     public int getMaxWeight() {
         return mMaxWeight;
     }
 
-    int getCargoLimit() {
-        return mCargoLimit;
-    }
-
-    int getCurrentRocketWeight() {
-        return mCurrentRocketWeight;
+    public int getRocketWeight() {
+        return mRocketWeight;
     }
 }
