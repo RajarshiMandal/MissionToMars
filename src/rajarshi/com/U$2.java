@@ -36,7 +36,7 @@ public class U$2 extends Rocket {
 
     private double getRandomDouble() {
         DecimalFormat df = new DecimalFormat("#.##");
-        return Double.parseDouble(df.format(new Random().nextDouble() + 0.01));
+        return Double.parseDouble(df.format(new Random().nextDouble()));
     }
 
     private double getResult() {
