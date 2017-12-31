@@ -14,10 +14,19 @@ public class U$1 extends Rocket {
 
     // Weight of the Cargo that it will carry.
     private int mCargoWeight;
+//    private static final int mRocketWeight = 10000,
+//            mMaxWeight = 18000,
+//            mCost = 100;
 
     /**
-     * Calling the constructor of the {@link Rocket} class to create U$1 rocket object.
+     * Calling the super of the {@link Rocket} class to create U$1 rocket object.
+     * But let's use the rocketWeight, maxWeight, cost parameters if anyone creates a better rocket.
      */
+//    U$1(int cargoWeight) {
+//        // Super can take static methods or Variables
+//        super(mRocketWeight, mMaxWeight, mCost);
+//        mCargoWeight = cargoWeight;
+//    }
     U$1(int rocketWeight, int maxWeight, int cost, int cargoWeight) {
         // Super can take static methods or Variables
         super(rocketWeight, maxWeight, cost);

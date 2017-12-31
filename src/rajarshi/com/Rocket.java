@@ -9,7 +9,7 @@ public class Rocket implements SpaceShip {
     private int mRocketWeight; // Weight of the rocket.
     private int mCost;
     private int mCargoLimit; // The max weight it can carry.
-    private int mCurrentCargoWeight = 0; // Current weight of the Items.
+    private int mCurrentCargoWeight; // Current weight of the Items.
 
     /**
      * The constructor of the Rocket Object.
@@ -23,7 +23,7 @@ public class Rocket implements SpaceShip {
         mMaxWeight = maxWeight;
         mCost = cost;
         // Calculate the cargo limit.
-        mCargoLimit = maxWeight - rocketWeight;
+        mCargoLimit = mMaxWeight - mRocketWeight;
     }
 
     @Override

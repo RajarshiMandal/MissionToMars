@@ -15,8 +15,8 @@ public class U$2 extends Rocket {
 
     private int mCargoWeight;
 
-    U$2(int rocketWeight, int maxWeight, int cost, int cargoWeight) {
-        super(rocketWeight, maxWeight, cost);
+    U$2(int rocketWeight, int maxWeight, int costInMillions, int cargoWeight) {
+        super(rocketWeight, maxWeight, costInMillions);
         mCargoWeight = cargoWeight;
     }
 
@@ -29,7 +29,9 @@ public class U$2 extends Rocket {
     @Override
     public boolean land() {
         //TODO: correct me.
-        return getRandomDouble() >= (4.0 * getResult());
+        double random = getRandomDouble();
+        double probability = 8.0 * getResult();
+        return random >= probability;
     }
 
     private double getRandomDouble() {
