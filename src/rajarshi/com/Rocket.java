@@ -82,4 +82,5 @@ public class Rocket implements SpaceShip {
     public int getRocketWeight() {
         return mRocketWeight;
     }
+
 }

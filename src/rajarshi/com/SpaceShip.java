@@ -24,7 +24,7 @@ public interface SpaceShip {
     int carry(Item weight);
 
     /**
-     * Takes an Item as an argument and
+     * Takes an Item as an argument
      *
      * @return true if the rocket can carry such item or false if it will exceed the weight limit.
      */

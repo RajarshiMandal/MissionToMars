@@ -42,4 +42,5 @@ public class U$2 extends Rocket {
     private double getResult() {
         return (double) mCargoWeight / getCargoLimit();
     }
+
 }
