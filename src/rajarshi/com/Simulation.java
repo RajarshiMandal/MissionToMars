@@ -197,5 +197,4 @@ public class Simulation {
             System.out.println("Total Cost: $" + cost + " Millions");
         }
     }
-
 }

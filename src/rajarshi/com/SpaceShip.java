@@ -29,4 +29,5 @@ public interface SpaceShip {
      * @return true if the rocket can carry such item or false if it will exceed the weight limit.
      */
     boolean canCarry(Item items);
+
 }
